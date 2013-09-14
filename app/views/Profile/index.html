@@ -1,0 +1,114 @@
+#{extends 'main.html' /}
+#{set title:'Profile Page' /}
+#{set button:'More'/}
+#{include 'nav/navopen.html' /}
+  <li><a href="/home">Home</a></li>
+#{include 'nav/dropdown_open.html'/}
+  <li><a href="/members">Members</a></li>
+  <li><a href="/profile">Profile</a></li>
+  <li><a href="/editprofile">EditProfile</a></li>
+  <li><a href="/blog">Blog</a></li>
+#{include 'nav/dropdown_close.html'/}
+  <li><a href="/logout">Logout</a></li>
+#{include 'nav/navclose.html' /}
+
+
+<div class="container">
+  <div class="row-fluid">
+    <div class="well span7">
+    <h3>Current Profile Details</h3>
+      <table class="table table-hover" border="1">
+        <tbody>
+          <tr>
+            <td>
+              <h5>Profile Picture</h5>
+              <img src="/profile/getpicture/${user.id}"/>
+            </td>
+            <td>
+              <h5>Thumbnail Picture</h5>
+              <img src="/profile/getthumbnail/${user.id}"/>
+            </td>
+            <td>
+              <p class="muted">First Name: ${user.firstName}</p> 
+              <p class="muted">Second Name: ${user.secondName}</p> 
+              <p class="muted">Age: ${user.age}</p>
+              <p class="muted">Email: ${user.email}</p>
+              <p class="muted">Nationality: ${user.nationality}</p>
+              <p class="muted">Status: ${user.statusText}</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  <div class="well span5">
+    <h3>Public Profile Details</h3>
+      <table class="table table-hover" border="1">
+        <tbody>
+          <tr>
+            <td>
+              <h5>Thumbnail Picture</h5>
+              <img src="/profile/getthumbnail/${user.id}"/>
+            </td>
+            <td>
+              <p class="muted">First Name: ${user.firstName}</p> 
+              <p class="muted">Second Name: ${user.secondName}</p> 
+              <p class="muted">Nationality: ${user.nationality}</p>
+              <p class="muted">Status: ${user.statusText}</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row-fluid">
+    <div class="well span4">
+      <h3>Profile Image</h3>
+        <img src="/profile/getpicture/${user.id}"/> 
+          <form action="/profile/uploadpicture/${user.id}" method="post" enctype="multipart/form-data">     
+            <fieldset>
+              <div class="control-group">
+                <label class="control-label"> Upload your file: </label>
+              <div class="controls">
+                <input type="file" name="picture" />     
+                <input type="submit" class="btn btn-primary" name="submit" value="upload"  />  
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+      <div class="well span4">
+        <h3>Thumbnail Image</h3>
+          <img src="/profile/getthumbnail/${user.id}"/> 
+        <form action="/profile/uploadthumbnail/${user.id}" method="post" enctype="multipart/form-data">     
+          <fieldset>
+          <div class="control-group">
+            <label class="control-label"> Upload your thumbnail image: </label>
+              <div class="controls">
+                <input type="file" name="thumbnail" />     
+                <input type="submit" class="btn btn-primary" name="submit" value="upload"  />  
+              </div>
+            </div>
+          </fieldset>
+        </form> 
+      </div>
+      <div class="well span4">
+        <form action="/profile/changestatus" method="POST">
+          <fieldset>
+            <h3>Status Text</h3>  
+             <p>${user.statusText}</p>
+             <div class="control-group">
+             <label class="control-label"> 
+                Enter text: 
+             </label>
+            <textarea name="statusText" placeholder="Your Status" ></textarea>
+            <button type="submit" class="btn btn-primary">Change</button>
+          </div>
+        </fieldset>
+      </form>    
+    </div>  
+  </div>
+</div>
+     
+  

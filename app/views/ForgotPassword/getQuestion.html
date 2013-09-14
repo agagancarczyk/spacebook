@@ -1,0 +1,26 @@
+#{include 'ForgotPassword/index.html'/}
+
+<div class="container">
+  <div class="row-fluid">
+    <div class="span12">
+      <h3 class="alert alert-info">${question}</h3>
+    </div>
+  </div>
+</div>
+#{if found}
+  <div class="container">
+    <div class="row-fluid">
+      <form class="form well span4" action="/forgotpassword/checkanswer" >
+        <fieldset>
+          <div class="control-group">
+            <div class="controls">
+              <label class="control-label">  Answer: </label>
+                <input type="text" id="answer" name="answer" placeholder="answer">
+              <button type="submit" class="btn btn-primary"> Go </button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+#{/if}

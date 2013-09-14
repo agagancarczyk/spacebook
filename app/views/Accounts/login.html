@@ -1,0 +1,44 @@
+#{extends 'main.html' /} 
+#{set title:'Login to Spacebook' /} 
+#{include 'nav/navopen.html' /}
+  <li><a href="/signup"> Signup </a></li>
+  <li class="active"><a href="/login"> Login </a></li>
+#{include 'nav/navclose.html' /}
+
+<div class="container">
+  <div class="row-fluid">
+    <form class= "form well span4" action="/authenticate" method="POST">
+      <fieldset>
+        <h3>Spacebook Login</h3>
+        <div class="control-group">
+          <div class="controls">
+            <label class="control-label"> Email: </label> 
+              <input type="text" name="email" required> 
+            <label class="control-label"> Password: </label> 
+              <input type="password" name="password" required>
+          </div>
+          <label class="checkbox">
+            <input type="checkbox"> Remember me
+          </label>
+          <button type="submit" class="btn btn-primary">Login</button>
+            <a class="btn  btn-warning" href="/forgotpassword">Forgot password</a>
+        </div>
+      </fieldset>
+    </form>
+   <div class="container">
+     <div class="row-fluid">
+       #{if wrongLogin}
+         <div class="container">
+           <div class="row-fluid span7 offset1">
+             <div class="alert alert-error">
+               <button type="button" class="close" data-dismiss="alert">&times;</button>
+               <h2><strong>Authentication Failed!</strong></h2>
+               <p> Wrong email and/ or password have been entered. Please try again. </p>
+             </div>
+           </div>
+         </div>
+       #{/if}
+     </div>
+   </div>
+ </div>
+</div>

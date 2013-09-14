@@ -1,0 +1,119 @@
+User(homer):
+    firstName: Homer
+    secondName: Simpson
+    email: homer@simpson.com
+    password: secret
+    age: 39
+    nationality: American
+    securityQuestion: What is your mother's middle name? 
+    answer: Jay 
+    
+User(marge):
+    firstName: Marge
+    secondName: Simpson
+    email: marge@simpson.com
+    password: secret
+    age: 39
+    nationality: American
+    securityQuestion: What is the name of your pet?
+    answer: Pinchy
+    
+User(lisa):
+    firstName: Lisa
+    secondName: Simpson
+    email: lisa@simpson.com
+    password: secret
+    age: 18
+    nationality: American
+    securityQuestion: What is the name of your first stuffed animal?
+    answer: Blinky
+    
+User(bart):
+    firstName: Bart
+    secondName: Simpson
+    email: bart@simpson.com
+    password: secret
+    age: 18
+    nationality: American
+    securityQuestion: What was your childhood nickname?
+    answer: Jojo
+
+User(maggie):
+    firstName: Maggie
+    secondName: Simpson
+    email: maggie@simpson.com
+    password: secret
+    age: 18
+    nationality: American
+    securityQuestion: What was the name of your first stuffed animal?
+    answer: Snappy
+         
+User(jacqueline):
+    firstName: Jacqueline
+    secondName: Bouvier
+    email: jacqueline@bouvier.com
+    password: secret
+    age: 60
+    nationality: Spanish
+    securityQuestion: What is your mother's middle name?
+    answer: Lee
+         
+User(abraham):
+    firstName: Abraham
+    secondName: Simpson
+    email: abraham@simpson.com
+    password: secret
+    age: 65
+    nationality: American
+    securityQuestion: What was your dream job as a child?
+    answer: Driver
+    
+User(enda):
+    firstName: Enda
+    secondName: Krabappel
+    email: enda@krabappel.com
+    password: secret
+    age: 38
+    nationality: Italian
+    securityQuestion: What is the name of your pet?
+    answer: Tiny
+    
+User(barney):
+    firstName: Barney
+    secondName: Gumble
+    email: barney@gumble.com
+    password: secret
+    age: 45
+    nationality: American
+    securityQuestion: What was your childhood nickname?
+    answer: Mite
+    
+User(ned):
+    firstName: Ned
+    secondName: Flanders
+    email: ned@flanders.com
+    password: secret
+    age: 50
+    nationality: American
+    securityQuestion: What was your dream job as a child?
+    answer: Mechanic
+    
+User(marie):
+    firstName: Marie
+    secondName: Curie
+    email: marie@curie.com
+    password: secret
+    age: 66
+    nationality: Polish
+    securityQuestion: What was your dream job as a child?
+    answer: Physicist
+
+User(frederic):
+    firstName: Frederic
+    secondName: Chopin
+    email: frederic@chopin.com
+    password: secret
+    age: 39
+    nationality: Polish
+    securityQuestion: What was your dream job as a child?
+    answer: Composer

@@ -1,0 +1,56 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Landing page
+GET		/										Accounts.index	
+GET     /policy									Accounts.policy						
+
+# Accounts
+GET		/signup									Accounts.signup
+GET		/login									Accounts.login
+GET		/logout									Accounts.logout
+POST	/register								Accounts.register
+POST	/authenticate							Accounts.authenticate
+GET	    /authenticate							Accounts.authenticate
+
+# ForgotPassword
+GET		/forgotpassword							ForgotPassword.index
+POST	/forgotpassword/getquestion/{email}		ForgotPassword.getQuestion
+POST	/forgotpassword/checkanswer/{answer}	ForgotPassword.checkAnswer
+POST	/forgotpassword/changepassword/{password}ForgotPassword.changePassword	
+
+# Home page		
+GET		/home									Home.index
+GET		/home/drop/{id}							Home.drop
+
+# Members page	
+GET		/members								Members.index
+GET     /members/follow/{id}                    Members.follow
+
+# Profile page
+GET		/profile								Profile.index
+GET     /publicprofile/{id}                     PublicProfile.visit
+POST 	/profile/changestatus					Profile.changeStatus
+POST	/publicprofile/sendmessage/{id}			PublicProfile.sendMessage
+POST    /profile/changestatus                   Profile.changeStatus
+POST    /profile/uploadpicture/{id}             Profile.uploadPicture
+GET     /profile/getpicture/{id}                Profile.getPicture
+POST	/profile/uploadthumbnail/{id}			Profile.uploadThumbnail
+GET		/profile/getthumbnail/{id}				Profile.getThumbnail
+
+# EditProfile page
+GET 	/editprofile							EditProfile.index
+POST	/editprofile/editdetails				EditProfile.editDetails
+
+# Blog page
+GET		/blog									Blog.blog
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}

@@ -1,0 +1,60 @@
+#{extends 'main.html' /}
+#{set title:'Public Profile Page' /}
+#{set button:'More'/}
+#{include 'nav/navopen.html' /}
+  <li><a href="/home">Home</a></li>
+#{include 'nav/dropdown_open.html'/}
+  <li><a href="/members">Members</a></li>
+  <li><a href="/profile">Profile</a></li>
+  <li><a href="/blog">Blog</a></li>
+#{include 'nav/dropdown_close.html'/}
+  <li><a href="/logout">Logout</a></li>
+#{include 'nav/navclose.html' /}
+
+<div class="container">
+  <div class="row-fluid">
+    <h3>Your Friend ${user.firstName} ${user.secondName}'s Home Page</h3>
+    <p>Nationality: ${user.nationality}</p>
+  </div>
+</div>
+<div class="container">
+  <div class="row-fluid">
+    <div class="well span4">
+      <div class="control-group">
+        <img src="/profile/getthumbnail/${user.id}"/>
+        <p> ${user.statusText} </p>
+        <form action="/publicprofile/sendmessage/${user.id}" method="POST">
+          <fieldset>
+            <span class="label">Leave Message</span>
+            <textarea name="messageText"></textarea>
+            <button type="submit" class="btn btn-primary">Send</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row-fluid">
+    <div class="span8">
+      <h4>Messages (${user.inbox.size()})</h4>
+        #{if user.inbox.size() > 0}
+        <ul>
+          #{list items:user.inbox, as:'message'}
+            <li> ${message.from.firstName} ${message.from.secondName} says ${message.messageText} on ${message.date.format("dd/MM/yyyy HH:mm:ss")} </li>
+          #{/list}
+        </ul>
+      #{/if} 
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row-fluid">
+    <div class="span8">
+      <a href="/home"><i class="icon-home icon-white"></i> Back to home page</a>
+    </div>
+  </div>
+</div>
+
+ 
+   

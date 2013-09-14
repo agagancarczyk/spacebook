@@ -1,0 +1,40 @@
+#{extends 'main.html' /}
+#{set title:'Members Page' /}
+#{set button:'More'/}
+#{include 'nav/navopen.html' /}
+  <li><a href="/home">Home</a></li>
+#{include 'nav/dropdown_open.html'/}
+  <li><a href="/members">Members</a></li>
+  <li><a href="/profile">Profile</a></li>
+  <li><a href="/blog">Blog</a></li>
+#{include 'nav/dropdown_close.html'/}
+  <li><a href="/logout">Logout</a></li>
+#{include 'nav/navclose.html' /}
+
+<div class="container">
+  <h2>Members</h2><br>
+</div>
+<div class="container">
+  <div class="row-fluid">
+    <table class="table table-hover" border="1">
+      <tbody>
+        #{list items:users, as:'user'}
+          <tr>
+            <td>
+              <img src="/profile/getthumbnail/${user.id}"/>
+            </td>
+            <td>
+              <p class="muted">${user.firstName} ${user.secondName} (Status: ${user.statusText})</p>
+              <p class="muted">(Nationality: ${user.nationality})<hr>
+              <p class="addAsFriend"> Add as Friend
+                <a href="members/follow/${user.id}" title="Add as Friend">
+                  <i class="icon-plus sign icon-white"></i>
+                </a>
+              </p>
+            </td>
+          </tr>
+        #{/list}
+      </tbody>
+    </table>
+  </div>
+</div>

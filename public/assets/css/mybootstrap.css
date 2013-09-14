@@ -1,0 +1,35 @@
+@import url('//fonts.googleapis.com/css?family=Droid+Sans:400,700');
+
+/*Additional bootstrap styling.
+ */
+ 
+p, ol {
+	font-size: 14px;
+	color: white;
+}
+
+p.addAsFriend {
+	color: #009900;
+}
+
+p.removeAsFriend {
+	color: #FF0000;
+}
+
+.well,
+.hero-unit,
+img {
+	border: solid 1px #33b5e5;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+}
+
+.btn {
+-webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+}
+
+
+

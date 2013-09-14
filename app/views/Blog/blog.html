@@ -1,0 +1,49 @@
+#{extends 'main.html' /} 
+#{set title:'Blog Page' /} 
+#{set button:'More'/}
+#{include 'nav/navopen.html' /}
+  <li><a href="/home">Home</a></li>
+#{include 'nav/dropdown_open.html'/}
+  <li><a href="/members">Members</a></li>
+  <li><a href="/profile">Profile</a></li>
+#{include 'nav/dropdown_close.html'/}
+  <li><a href="/logout">Logout</a></li>
+#{include 'nav/navclose.html' /}
+
+
+<div class="container">
+  <div class="row home">
+    <form class= "form well span12" action="@{Blog.newPost(postText)}" method="POST">
+      <fieldset>
+        <label>Post content</label>
+          <textarea name="postText" id="postText" placeholder="type in something..."></textarea>
+          <button class="btn btn-primary" type="submit" value="new post">save</button>
+      </fieldset>
+    </form>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="container">
+    <div class="row home">
+      <form class= "form well span12" action="/blog" method="POST">
+        <fieldset>
+          <h2 class="text-info text-center">Posts</h2><hr>
+          #{if user}
+              <ul>
+                #{list items:user.posts, as:'post'}
+                  <li>
+                    <p>${post.postText}</p>
+                    <p>Posted at ${post.date}</p>
+                  </li>
+                #{/list}
+              </ul>
+            #{/if}<hr> 
+              <a href="/Home/index"><i class="icon-home icon-white"></i> Back to Home page</a>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+
+       
+ 

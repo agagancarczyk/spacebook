@@ -1,0 +1,16 @@
+#{extends 'main.html' /} 
+#{set title:'Application Page' /} 
+#{set button:'More'/}
+#{include 'nav/navopen.html' /}
+  <li><a href="/home">Home</a></li>
+#{include 'nav/dropdown_open.html'/}
+  <li><a href="/members">Members</a></li>
+  <li><a href="/profile">Profile</a></li>
+  <li><a href="/blog">Blog</a></li>
+#{include 'nav/dropdown_close.html'/}
+  <li><a href="/logout">Logout</a></li>
+#{include 'nav/navclose.html' /}
+
+<div class="container">
+  <p>Welcome to Spacebook!</p>
+</div>
